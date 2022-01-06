@@ -1,0 +1,2 @@
+blueprint
+зарегистрироватся в snippets API

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-from sekret_key import my_secret_key, password_postgresql
+from sekret_key import my_secret_key
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_server',
         'USER': 'postgres',
-        'PASSWORD': password_postgresql,
+        'PASSWORD': 'Dolvar_225!Vlad',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -118,7 +118,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
