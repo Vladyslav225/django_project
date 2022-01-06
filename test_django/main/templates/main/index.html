@@ -1,9 +1,24 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-Главная страница
+    {{ title }}
 {% endblock %}
 
 {% block container %}
-<h1>главная страница</h1>
+
+    <h1>главная страница</h1>
+
+    {% if task %}
+
+        {% for element in task %}
+            <div class="task">
+                <h3>{{ element.title }}</h3>
+                <p>{{ element.task }}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+            <p>Нету записей</p>
+
+    {% endif %}
 {% endblock %}
