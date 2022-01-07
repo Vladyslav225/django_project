@@ -4,3 +4,4 @@ celery
 nginx
 supervisor
 connect env, for sekret data
+redis
