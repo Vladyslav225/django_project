@@ -6,12 +6,12 @@
 
 {% block container %}
 
-    <h1>главная страница</h1>
+    <h1>Главная страница</h1>
 
     {% if task %}
 
         {% for element in task %}
-            <div class="task">
+            <div class="alert alert-warning mt-2">
                 <h3>{{ element.title }}</h3>
                 <p>{{ element.task }}</p>
             </div>
@@ -22,3 +22,5 @@
 
     {% endif %}
 {% endblock %}
+
+
