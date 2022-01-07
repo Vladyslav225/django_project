@@ -3,3 +3,5 @@ blueprint
 celery
 nginx
 supervisor
+JWT
+connect env, for sekret data
