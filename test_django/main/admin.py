@@ -1,9 +1,12 @@
+# Register your models here.
 from django.contrib import admin
 
-# Register your models here.
-
-
-from .models import Task
+from .models import Task, Contact
 
 
 admin.site.register(Task)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email')
+

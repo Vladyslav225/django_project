@@ -1,4 +1,4 @@
-from .models import Task
+from .models import Task, Contact
 from django.forms import ModelForm, TextInput, Textarea
 
 
@@ -21,5 +21,27 @@ class TaskForm(ModelForm):
                 attrs = {
                 'class': 'form-control',
                 'placeholder': 'Введите описание'
+                })
+            }
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        
+        fields = [
+            'name',
+            'email'
+            ]
+
+        widgets = {
+            'name': TextInput(
+                attrs = {
+                'class': 'form-control',
+                'placeholder': 'Введите имя'
+                }),
+            'email': TextInput(
+                attrs = {
+                'class': 'form-control',
+                'placeholder': 'Введите email'
                 })
             }
