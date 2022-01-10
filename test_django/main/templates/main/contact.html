@@ -9,8 +9,10 @@
     <form method="post">
         {% csrf_token %}
 
-        {{ form.as_p }}
+        {{ form.name }}<br>
+        {{ form.email }}<br>
         
         <button type="submit" class="btn btn-success">Отправить</button>
+        <span>{{ error }}</span>
     </form>
 {% endblock %}

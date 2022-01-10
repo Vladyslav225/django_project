@@ -1,0 +1,10 @@
+https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html
+https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html
+https://docs.celeryproject.org/en/stable/django/first-steps-with-django.html
+https://redis.io/
+
+swagger https://drf-yasg.readthedocs.io/en/stable/readme.html
+
+миддлвар  https://docs.djangoproject.com/en/4.0/topics/http/middleware/
+
+https://djbook.ru/rel1.7/topics/http/middleware.html

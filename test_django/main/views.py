@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
+# from django.views.generic import CreateView
 
 from .forms import TaskForm, ContactForm
-from .models import Task, Contact
+from .models import Task
 from .service import send
 
 # Create your views here.
@@ -46,18 +46,39 @@ def create(request):
     return render(request, 'main/create.html', context)
 
 
-class ContactView(CreateView):
-    #Displaying the signature form by email
+def contact(request):
+    error = ''
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
 
-    model = Contact
-    form_class = ContactForm
-    succes_url = '/'
-    template_name = 'main/contact.html'
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
-    def form_valid(self, form):
-        form.save()
-        send(form.instance.email)
+        else:
+            error = 'Неверная регистрация'
 
-        return super().form_valid(form)
+    form = ContactForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+
+    return render(request, 'main/contact.html', context)
+
+
+# class ContactView(CreateView):
+#     #Displaying the signature form by email
+
+#     model = Contact
+#     form_class = ContactForm
+#     succes_url = '/'
+#     template_name = 'main/contact.html'
+
+#     def form_valid(self, form):
+#         form.save()
+#         
+
+#         return super().form_valid(form)
 
 

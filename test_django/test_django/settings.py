@@ -41,7 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_celery_results',
+    'main.tasks.app.TasksConfig',
+    # 'django.contrib.staticfiles',
+    'drf_yasg',
     'main'
+    
 ]
 
 MIDDLEWARE = [
@@ -85,7 +91,8 @@ DATABASES = {
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
         'PORT': env('DB_PORT'),
-        'HOST': env('DB_HOST')
+        'HOST': env('DB_HOST'),
+        'ATOMIC_REQUESTS': True
     }
         
 }
@@ -131,22 +138,18 @@ STATIC_URL = '/static/'
 
 #TODO smtp
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'yvv.work@gmail.com'
-EMAIL_PORT_PASSWORD = 'Dolvar!!!!@_32_65_98@$'
-EMAIL_PORT = 587
+
 
 #Redis related settings
 
-REDIS_HOST = '0.0.0.0'
+REDIS_HOST = 'localhost'
 REDIS_PORT = '6379'
 
-CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
-CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT
+# CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 
-CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
-CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT
+# CELERY_ACCEPT_CONTENT = ['application/json']
 
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
