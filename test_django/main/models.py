@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -24,3 +25,20 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name = 'Пользователи'
+
+class Item(models.Model):
+    TEST = 'test'
+    DEV = 'dev'
+
+    OPTIONS = (
+        ('test', TEST),
+        ('dev', DEV)
+    )
+
+    title = models.CharField(max_length=30)
+    url = models.URLField('url', max_length=500, blank=True, null=True, default=None)
+    price = models.IntegerField(blank=True, null=True)
+    type = models.CharField(max_length=10, choices=OPTIONS, default=TEST, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.title} - {self.price}'

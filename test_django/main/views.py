@@ -45,6 +45,8 @@ def create(request):
 
     return render(request, 'main/create.html', context)
 
+    
+
 
 def contact(request):
     error = ''

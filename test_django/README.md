@@ -5,3 +5,4 @@ nginx
 supervisor
 connect env, for sekret data
 redis
+task рассыки
