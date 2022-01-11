@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import environ
 import os
+from django.contrib.messages import constants as messages
 
 env = environ.Env()
 

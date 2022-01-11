@@ -1,16 +1,27 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 # from django.views.generic import CreateView
+
 
 from .forms import TaskForm, ContactForm
 from .models import Task
-from .service import send
+# from .service import send
 
 # Create your views here.
+# def result(request):
+#     val1 = request.GET['num1']
+#     val2 = request.GET['num2']
+#     res = val1 + val2
+#     return render(request, "result.html", {'result':res})
+
+# def add(request):
+
+#     return render(request,"index.html")
 
 
-def index(request):
+def home(request):
     task = Task.objects.order_by('title') # Sorting by a certain field
-    return render(request, 'main/index.html', {'task': task, 'title': 'Главная страница'})
+    return render(request, 'main/home.html')
 
 
 def about(request):
@@ -45,7 +56,7 @@ def create(request):
 
     return render(request, 'main/create.html', context)
 
-    
+
 
 
 def contact(request):
