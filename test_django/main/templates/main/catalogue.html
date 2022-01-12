@@ -5,5 +5,19 @@
 {% endblock %}
 
 {% block container %}
-<h1>Каталог</h1>
+    <h1>Каталог</h1>
+
+    {% if prod %}
+
+        {% for element in prod %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ element.title }}</h3>
+                <p>{{ element.price }}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+            <p>Нету записей</p>
+
+    {% endif %}
 {% endblock %}

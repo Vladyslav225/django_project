@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 from .forms import TaskForm, ContactForm
-from .models import Task, Contact
+from .models import Task, Contact, Catalogue
 # from .service import send
 
 # Create your views here.
@@ -29,7 +29,9 @@ def about(request):
 
 
 def catalogue(request):
-    return render(request, 'main/catalogue.html')
+    prod = Catalogue.objects.order_by() # Sorting by a certain field
+
+    return render(request, 'main/catalogue.html', {'prod': prod})
 
 
 def basket(request):
