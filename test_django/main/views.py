@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 from .forms import TaskForm, ContactForm
-from .models import Task
+from .models import Task, Contact
 # from .service import send
 
 # Create your views here.
@@ -16,12 +16,12 @@ from .models import Task
 
 # def add(request):
 
-#     return render(request,"index.html")
+    # return render(request,"index.html")
 
 
 def home(request):
     task = Task.objects.order_by('title') # Sorting by a certain field
-    return render(request, 'main/home.html')
+    return render(request, 'main/home.html', {'task': task})
 
 
 def about(request):

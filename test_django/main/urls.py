@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.urls import path, re_path
 
-from django.urls import path,include
+from django.urls import path
 
 from . import views
 # from .views import index, about, catalogue, basket, create, contact
