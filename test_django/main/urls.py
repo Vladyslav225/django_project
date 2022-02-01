@@ -31,6 +31,5 @@ urlpatterns = [
     path('catalogue', views.catalogue, name='catalogue'),
     path('basket', views.basket, name='basket'),
     path('create', views.create, name='create'),
-    # path('contact', ContactView.as_view(), name='contact')
     path('contact', views.contact, name='contact'),
 ]
