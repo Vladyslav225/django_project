@@ -5,18 +5,6 @@ from django.http import HttpResponse
 
 from .forms import TaskForm, ContactForm
 from .models import Task, Contact, Catalogue
-# from .service import send
-
-# Create your views here.
-# def result(request):
-#     val1 = request.GET['num1']
-#     val2 = request.GET['num2']
-#     res = val1 + val2
-#     return render(request, "result.html", {'result':res})
-
-# def add(request):
-
-    # return render(request,"index.html")
 
 
 def home(request):
@@ -80,20 +68,5 @@ def contact(request):
     }
 
     return render(request, 'main/contact.html', context)
-
-
-# class ContactView(CreateView):
-#     #Displaying the signature form by email
-
-#     model = Contact
-#     form_class = ContactForm
-#     succes_url = '/'
-#     template_name = 'main/contact.html'
-
-#     def form_valid(self, form):
-#         form.save()
-#         
-
-#         return super().form_valid(form)
 
 
