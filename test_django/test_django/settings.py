@@ -148,18 +148,6 @@ BOOTSTRAP3 = {
 
 #TODO smtp
 
+# TODO Redis related settings
 
-
-#Redis related settings
-
-REDIS_HOST = 'localhost'
-REDIS_PORT = '6379'
-
-CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT
-# CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
-
-CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT
-# CELERY_ACCEPT_CONTENT = ['application/json']
-
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
+#TODO Celery
